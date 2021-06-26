@@ -5,6 +5,11 @@ function formIsValid(...args) {
   let isEmail = "";
   let formValid = false;
 
+  const errorMessage = {
+    fieldError: "",
+    emailError: "",
+  };
+
   // validating form fields length
 
   function fieldLengthValid(args) {
@@ -14,6 +19,10 @@ function formIsValid(...args) {
 
     if (fieldLength === argLength) {
       isFieldValid = true;
+    }
+    if (fieldLength !== argLength) {
+      isFieldValid = false;
+      errorMessage.fieldError = "Fields are empty";
     }
   }
 
@@ -26,6 +35,7 @@ function formIsValid(...args) {
   function validateEmail(email) {
     if (email === undefined) {
       isEmail = false;
+      errorMessage.emailError = "Email must be in proper format";
       return;
     }
     isEmail = email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
@@ -36,7 +46,10 @@ function formIsValid(...args) {
 
   if (isFieldValid && isEmail) formValid = true;
 
-  return formValid;
+  console.log(formValid);
+  console.log(errorMessage);
+
+  return formValid, errorMessage;
 }
 
 const firstName = "Solomon";
