@@ -1,5 +1,11 @@
 function formIsValid(...args) {
-  const isLengthValid = args.map((arg) => arg.length > 0);
+  let isEmail = "";
+
+  // validating form fields length
+
+  const isLengthValid = args
+    .map((arg) => arg.length > 0)
+    .reduce((arg) => arg === true);
 
   const getEmail = args.find((arg) => arg.includes("@"));
 
@@ -7,14 +13,20 @@ function formIsValid(...args) {
 
   function validateEmail(email) {
     if (email === undefined) {
-      console.log(false);
+      isEmail = false;
       return;
     }
-    const isEmail = email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
-    console.log(isEmail);
+    isEmail = email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
+    return isEmail;
   }
 
   validateEmail(getEmail);
+
+  if (isLengthValid && isEmail) {
+    console.log(true);
+  } else {
+    console.log(false);
+  }
 }
 
 const firstName = "Solomon";
