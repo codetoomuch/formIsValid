@@ -1,15 +1,27 @@
 function formIsValid(...args) {
+  const argLength = args.length;
+
+  let isFieldValid = false;
   let isEmail = "";
+  let formValid = false;
 
   // validating form fields length
 
-  const isLengthValid = args
-    .map((arg) => arg.length > 0)
-    .reduce((arg) => arg === true);
+  function fieldLengthValid(args) {
+    const fieldLength = args
+      .map((arg) => arg.length > 0)
+      .filter((arg) => arg === true).length;
 
-  const getEmail = args.find((arg) => arg.includes("@"));
+    if (fieldLength === argLength) {
+      isFieldValid = true;
+    }
+  }
+
+  fieldLengthValid(args);
 
   // validating email
+
+  const getEmail = args.find((arg) => arg.includes("@"));
 
   function validateEmail(email) {
     if (email === undefined) {
@@ -22,11 +34,9 @@ function formIsValid(...args) {
 
   validateEmail(getEmail);
 
-  if (isLengthValid && isEmail) {
-    console.log(true);
-  } else {
-    console.log(false);
-  }
+  if (isFieldValid && isEmail) formValid = true;
+
+  return formValid;
 }
 
 const firstName = "Solomon";
