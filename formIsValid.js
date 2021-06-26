@@ -1,9 +1,7 @@
 function formIsValid(...args) {
   const isLengthValid = args.map((arg) => arg.length > 0);
 
-  const email = args.filter((arg) => arg.includes("@")).pop();
-  console.log(email);
-  console.log(args);
+  const getEmail = args.find((arg) => arg.includes("@"));
 
   // validating email
 
@@ -16,7 +14,7 @@ function formIsValid(...args) {
     console.log(isEmail);
   }
 
-  validateEmail(email);
+  validateEmail(getEmail);
 }
 
 const firstName = "Solomon";
