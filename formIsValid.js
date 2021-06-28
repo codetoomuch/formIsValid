@@ -1,6 +1,8 @@
 function formIsValid(...args) {
   const argLength = args.length;
 
+  const formValidated = [];
+
   let isFieldValid = false;
   let isEmail = "";
   let formValid = false;
@@ -9,6 +11,8 @@ function formIsValid(...args) {
     fieldError: "",
     emailError: "",
   };
+
+  // const age = args.map((arg) => console.log(arg.match(/[0-9]/gi)));
 
   // validating form fields length
 
@@ -46,14 +50,22 @@ function formIsValid(...args) {
 
   if (isFieldValid && isEmail) formValid = true;
 
-  console.log(formValid);
-  console.log(errorMessage);
+  //  console.log(formValid);
+  //  console.log(errorMessage);
 
-  return formValid, errorMessage;
+  formValidated.push(formValid);
+  formValidated.push(errorMessage);
+
+  return formValidated;
 }
 
-const firstName = "Solomon";
-const lastName = "David";
-const email = "sol.david@express.com";
+// TESTING
 
-formIsValid(firstName, lastName, email);
+const firstName = "Solomon";
+const lastName = "";
+const email = "";
+const age = "30";
+const phone = "+990349020340";
+
+const newFormValidation = formIsValid(firstName, lastName, email, age, phone);
+console.log(newFormValidation);
