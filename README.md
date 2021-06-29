@@ -1,4 +1,4 @@
-#FormIsValid
+# FormIsValid
 
 It is a simple form validator for small applications and projects,
 it checks for the field lengths and email type.
@@ -6,7 +6,7 @@ it checks for the field lengths and email type.
 It returns an array of form valid being true or false and an object of
 errors being detected.
 
-#Getting Started
+# Getting Started
 
 It's very simple.
 
@@ -19,7 +19,7 @@ simply do
 
 After that you can pass the arguements to ***formisvalid*** for validation.
 
-#Quick Start
+# Quick Start
 
 	> const formIsValid = require('formisvalid');
 	> const formValidated = formIsValid(firstName, lastName, email);
@@ -42,7 +42,7 @@ OR
 
 	> [ false, { fieldError: 'Fields can't be empty', emailError: 'Email must be in proper format'} ]
 
-#Author
+# Author
 
 Written by @codetoomuch, you can find me on github/twitter, if you find
 any bug or any problem with implementation feel free to contact me, happy tohelp you.
