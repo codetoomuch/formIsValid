@@ -1,0 +1,19 @@
+{
+  "name": "formisvalid",
+  "version": "1.0.0",
+  "description": "A simple form validator for small applications.",
+  "main": "formIsValid.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codetoomuch/formIsValid.git"
+  },
+  "author": "codetoomuch",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codetoomuch/formIsValid/issues"
+  },
+  "homepage": "https://github.com/codetoomuch/formIsValid#readme"
+}
