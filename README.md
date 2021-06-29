@@ -45,4 +45,4 @@ OR
 # Author
 
 Written by @codetoomuch, you can find me on github/twitter, if you find
-any bug or any problem with implementation feel free to contact me, happy tohelp you.
+any bug or any problem with implementation feel free to contact me, happy to help you.
