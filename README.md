@@ -42,6 +42,16 @@ OR
 
 	> [ false, { fieldError: 'Fields can't be empty', emailError: 'Email must be in proper format'} ]
 
+Then you can use array destructuring to get values, to use in form to
+give errrors on form submit.
+
+	> const [ formValid, formMessage ] = formValidated;
+
+	> console.log(formValid) // false;
+	> console.log(formMessage) // { fieldError: 'Fields can't be empty, emailError: 'Email must be in proper format' }
+
+
+
 # Author
 
 Written by @codetoomuch, you can find me on github/twitter, if you find
